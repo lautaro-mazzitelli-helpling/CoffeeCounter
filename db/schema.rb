@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030150625) do
+ActiveRecord::Schema.define(version: 20151030155241) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "name"
@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(version: 20151030150625) do
 
   create_table "coffee_boxes", force: :cascade do |t|
     t.date     "date"
-    t.integer  "user_id"
+    t.integer  "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "coffee_boxes", ["user_id"], name: "index_coffee_boxes_on_user_id"
+  add_index "coffee_boxes", ["buyer_id"], name: "index_coffee_boxes_on_buyer_id"
 
 end

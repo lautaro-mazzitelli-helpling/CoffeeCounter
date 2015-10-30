@@ -69,6 +69,6 @@ class CoffeeBoxesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coffee_box_params
-      params.require(:coffee_box).permit(:date, :user_id)
+      params.require(:coffee_box).permit(:date, :buyer_id)
     end
 end

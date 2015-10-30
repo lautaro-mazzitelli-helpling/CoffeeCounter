@@ -1,1 +1,1 @@
-json.extract! @coffee_box, :id, :date, :user_id, :created_at, :updated_at
+json.extract! @coffee_box, :id, :date, :buyer_id, :created_at, :updated_at

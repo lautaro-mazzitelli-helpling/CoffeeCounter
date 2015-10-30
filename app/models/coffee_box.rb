@@ -1,3 +1,3 @@
 class CoffeeBox < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :buyer
 end

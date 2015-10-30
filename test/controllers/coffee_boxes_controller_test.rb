@@ -18,7 +18,7 @@ class CoffeeBoxesControllerTest < ActionController::TestCase
 
   test "should create coffee_box" do
     assert_difference('CoffeeBox.count') do
-      post :create, coffee_box: { date: @coffee_box.date, user_id: @coffee_box.user_id }
+      post :create, coffee_box: { buyer_id: @coffee_box.buyer_id, date: @coffee_box.date }
     end
 
     assert_redirected_to coffee_box_path(assigns(:coffee_box))
@@ -35,7 +35,7 @@ class CoffeeBoxesControllerTest < ActionController::TestCase
   end
 
   test "should update coffee_box" do
-    patch :update, id: @coffee_box, coffee_box: { date: @coffee_box.date, user_id: @coffee_box.user_id }
+    patch :update, id: @coffee_box, coffee_box: { buyer_id: @coffee_box.buyer_id, date: @coffee_box.date }
     assert_redirected_to coffee_box_path(assigns(:coffee_box))
   end
 
