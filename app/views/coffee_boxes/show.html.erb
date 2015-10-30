@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @coffee_box.date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @coffee_box.user %>
+</p>
+
+<%= link_to 'Edit', edit_coffee_box_path(@coffee_box) %> |
+<%= link_to 'Back', coffee_boxes_path %>
