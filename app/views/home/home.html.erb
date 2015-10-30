@@ -1,0 +1,55 @@
+<div class="center jumbotron">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Rank #</th>
+      <th>Name</th>
+      <th>Coffee Boxes</th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% rank = 0 %>
+    <% @buyers.each do |buyer| %>
+      <tr>
+        <td><%= rank = rank + 1 %></td>
+        <td><%= buyer.name %></td>
+        <td><%= buyer.coffee_boxes.size %></td>
+        <td><%= button_tag "+", class: "btn btn-small btn-primary", "data-toggle" => "modal", "data-target" => "#myModal"  %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <p class="text-right">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      + Buyer
+    </a>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="well">
+      ...
+    </div>
+  </div>
+
+
+</div>
+
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Buy a box of coffee</h4>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to buy a box of coffee?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Buy!</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
