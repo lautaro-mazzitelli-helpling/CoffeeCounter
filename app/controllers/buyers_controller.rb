@@ -27,15 +27,12 @@ class BuyersController < ApplicationController
     @buyer = Buyer.new(buyer_params)
     @buyers = Buyer.all
 
-    respond_to do |format|
-      if @buyer.save
-        format.html { redirect_to root_path, notice: @buyer.name + ' was added. More coffee is coming!' }
-        format.json { render :root_path, status: :created, location: root_path }
-      else
-        format.html { render 'home/home' }
-        format.json { render json: @buyer.errors, status: :unprocessable_entity }
-      end
+    if @buyer.save
+      redirect_to root_path, notice: @buyer.name + ' was added. More coffee is coming!'
+    else
+      render 'home/home'
     end
+
   end
 
   # PATCH/PUT /buyers/1
