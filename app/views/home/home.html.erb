@@ -6,7 +6,7 @@
 
   <% if @buyer.errors.any? %>
     <div id="error_explanation" class="alert alert-danger">
-      <h2><%= pluralize(@buyer.errors.count, "error") %> prohibited this buyer from being saved:</h2>
+      <p>Whops! <%= pluralize(@buyer.errors.count, "problem") %> when saving the new buyer:</p>
       <ul>
         <% @buyer.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -14,7 +14,6 @@
       </ul>
     </div>
   <% end %>
-
 
 
   <table class="table table-striped">
@@ -47,9 +46,9 @@
     </a>
   </p>
   <div class="collapse" id="collapseExample">
-    <div class="well">
+    <div class="well text-right">
 
-      <%= form_for @buyer, :html => {:class => "form-inline text-right"} do |f| %>
+      <%= form_for @buyer, :html => {:class => "form-inline"} do |f| %>
         <div class="form-group">
           <%= f.label :name %>
           <%= f.text_field :name, :class => "form-control", :id => "form-name", :placeholder => "Jane Doe" %>
