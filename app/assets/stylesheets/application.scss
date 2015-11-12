@@ -1,6 +1,55 @@
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap';
+@import "materialize/components/color";
+$primary-color: color("brown", "darken-2") !default;
+@import 'materialize';
 
 .field_with_errors { display: inline-block; }
 
 #error_explanation > ul > li { padding-top: 10px;}
+
+$desktop: 600px;
+
+
+$subheaderHeightMobile: 200px;
+$subheaderHeightDesktop: 300px;
+
+.container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  table tr td:last-child {
+    text-align: right;
+  }
+  .submit-button {
+    text-align: right;
+  }
+  @media (max-width: $desktop) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.image-container {
+  height: $subheaderHeightDesktop;
+  width: 100%;
+  background-image: url('http://www.weightlosscoffeereview.com/wp-content/uploads/2014/07/coffee-sack.jpg');
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  @media (max-width: $desktop) {
+    height: $subheaderHeightMobile;
+  }
+}
+nav .brand-logo {
+  font-size: 26px;
+  padding-left: 20px;
+}
+
+.floating-button {
+  position: absolute;
+  top: calc(#{$subheaderHeightDesktop} + 23px);
+  right: 60px;
+  @media (max-width: $desktop) {
+    top: calc(#{$subheaderHeightMobile} + 23px);
+  }
+}

@@ -8,11 +8,15 @@ class Buyer < ActiveRecord::Base
 
   attr_accessor :amount
 
-  after_initialize :count
-
-  protected
-  def count
+  def amount
     self.amount = coffee_boxes.size
   end
 
+  def fullData
+    {
+      name: name,
+      amount: coffee_boxes.size,
+      coffee_boxes: coffee_boxes.map { |cb| { date: cb.date, buyer_id: cb.buyer_id } }
+    }
+  end
 end
