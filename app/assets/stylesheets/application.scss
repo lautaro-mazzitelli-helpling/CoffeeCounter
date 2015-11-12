@@ -1,5 +1,5 @@
 @import "bootstrap-sprockets";
-@import 'bootstrap';
+@import 'bootstrap-custom';
 @import "materialize/components/color";
 $primary-color: color("brown", "darken-2") !default;
 @import 'materialize';
