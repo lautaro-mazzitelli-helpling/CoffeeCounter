@@ -1,5 +1,6 @@
 class CoffeeBoxesController < ApplicationController
   before_action :set_coffee_box, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /coffee_boxes
   # GET /coffee_boxes.json
