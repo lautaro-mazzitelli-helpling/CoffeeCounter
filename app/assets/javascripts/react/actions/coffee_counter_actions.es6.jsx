@@ -1,21 +1,8 @@
 "use strict";
-// class CoffeeActions {
-// 	contructor(){
-// 		this.generateActions('initData', 'submitBuyer');
-// 	}
-// }
-// window.CoffeeActions = alt.createActions(CoffeeActions);
 
-
-class CoffeeActions {
-	submitBuyer(name) {
+class CoffeeBoxActions {
+	submitCoffeeBox(name) {
 		return name;
 	}
-	initData(buyers) {
-		return buyers;
-	}
-	getBuyers(){
-		return {};
-	}
 }
-window.CoffeeActions = alt.createActions(CoffeeActions);
+window.app.actions.CoffeeBoxActions = alt.createActions(CoffeeBoxActions);

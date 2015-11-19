@@ -19,3 +19,4 @@
 //= require components
 //= require_tree .
 //= require materialize-sprockets
+//= require moment

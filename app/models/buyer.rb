@@ -14,9 +14,11 @@ class Buyer < ActiveRecord::Base
 
   def fullData
     {
+      id: id,
       name: name,
-      amount: coffee_boxes.size,
-      coffee_boxes: coffee_boxes.map { |cb| { date: cb.date, buyer_id: cb.buyer_id } }
+      coffee_boxes: coffee_boxes.map { |cb| { date: cb.date, buyer_id: cb.buyer_id } },
+      created_at: created_at,
+      updated_at: updated_at,
     }
   end
 end

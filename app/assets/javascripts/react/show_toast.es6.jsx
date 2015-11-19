@@ -1,24 +1,33 @@
-class ShowToast extends React.Component {
-	componentDidMount () {
-		if (this.props.type === 'error') {
-			this.setToast(this.buildMessageFromError(this.props.errors));
-		} else {
-			this.setToast(this.props.message || 'default');
-		}
-	}
-	buildMessageFromError (errors){
-		var message;
-		for (var value of errors.name) {
-			message = value;
-		}
-		console.log(message);
-		return message;
-	}
-	setToast (message) {
-		Materialize.toast(message, 4000);
-	}
-	render () {
-	    return <div />;
-	}
-}
+var ShowToast = React.createClass ({
+  getInitialState() {
+    return app.stores.MessageStore.getState();
+  },
+  componentDidMount () {
+    app.stores.MessageStore.listen(this.onChange);
+  },
+  onChange(state){
+    this.setToast(state.messages[state.messages.length-1]);
+  },
+  componentWillUnmount() {
+      app.stores.MessageStore.unlisten(this.onChange);
+  },
+  setToast (message) {
+    var fullMessage;
+    switch (message.type){
+      case "error":
+        fullMessage = "Error: "+ message.message;
+        break;
+      case "warning":
+        fullMessage = "Warning: "+ message.message;
+        break;
+      case "success":
+        fullMessage = message.message;
+        break;
+    }
+    Materialize.toast(fullMessage, 5000);
+  },
+  render () {
+      return <div />;
+  }
+});
 

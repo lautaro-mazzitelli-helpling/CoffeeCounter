@@ -25,12 +25,12 @@ class BuyersController < ApplicationController
   # POST /buyers
   # POST /buyers.json
   def create
-    @buyer = Buyer.new(buyer_params)
+    @buyer = Buyer.new(buyer_params);
     @buyers = Buyer.all
     respond_to do |format|
       if @buyer.save
-        format.json { render :show, status: :ok, location: @buyer }
         format.html { redirect_to root_path, notice: @buyer.name + ' was added. More coffee is coming!' }
+        format.json { render :json => {:status => :ok, :data => @buyer.fullData }}
       else
         format.html { render :edit }
         format.json { render json: @buyer.errors, status: :unprocessable_entity }

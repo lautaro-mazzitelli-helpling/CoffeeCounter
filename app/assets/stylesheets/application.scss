@@ -53,3 +53,21 @@ nav .brand-logo {
     top: calc(#{$subheaderHeightMobile} + 23px);
   }
 }
+
+.table-row td{
+  animation: show 1s;
+}
+.add-buyer-form {
+  animation: show 1s;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+

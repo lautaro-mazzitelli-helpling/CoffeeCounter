@@ -2,21 +2,14 @@
   <div class="image-container">
   </div>
 </section>
-<a class="floating-button btn-floating btn-large waves-effect waves-light brown darken-4"
-   data-toggle="collapse"
-   href="#collapseExample">
-    <i class="material-icons">perm_identity</i>
-</a>
 <section class="buyers-list">
   <div class="container">
     <% if notice %>
       <%= react_component('ShowToast', {type: 'success', message: notice}) %>
     <% end %>
 
-    <% if @buyer.errors.any? %>
-      <%= react_component('ShowToast', {type: 'error', errors: @buyer.errors}) %>
-    <% end %>
 
+    <%= react_component('ShowToast') %>
     <%= react_component('AddBuyer') %>
     <%= react_component('BuyersTable', {buyers: @buyers}) %>
      

@@ -1,13 +1,16 @@
 class BuyersTable extends React.Component {
   componentWillMount() {
-    CoffeeActions.initData(this.props.buyers);
+    app.actions.BuyerActions.initData(this.props.buyers);
   }
   render () {
     return (
-       <table>
-            <BuyersTableHead />
-            <BuyersTableBody />
-        </table>
+      <div>
+        <table className="table-animate">
+              <BuyersTableHead />
+              <BuyersTableBody />
+          </table>
+      </div>
+       
     )
   }
 }

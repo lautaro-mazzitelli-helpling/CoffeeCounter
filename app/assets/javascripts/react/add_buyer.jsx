@@ -1,22 +1,36 @@
 var AddBuyer = React.createClass({
-
-  postBuyer () {
-    console.log('name', this.refs.buyerName.value);
-    console.log('CoffeeActions', CoffeeActions);
-    CoffeeActions.submitBuyer(this.refs.buyerName.value);
+  componentDidMount() {
+    $(document.body).on('keydown', this.handleKeyDown);
+    app.stores.BuyerStore.listen(this.onChange);
+  },
+  componentWillUnmount() {
+    app.stores.BuyerStore.unlisten(this.onChange);
+  },
+  getInitialState() {
+    return { showBuyerForm: false };
+  },
+  onChange(state){
+    this.setState(state);
+  },
+  switchState(){
+    this.setState({ showBuyerForm: !this.state.showBuyerForm });
+  },
+  onUpdate(){
+    this.setState({
+      showBuyerForm: false
+    });
   },
   render: function() {
     return (
-      <div className="col s10 collapse" id="collapseExample">
-        <div className="row">
-          <div className="input-field col s8">
-            <input placeholder="Buyer Name" id="form-name" type="text" className="form-control" ref="buyerName" />
-          </div>
-          <div className="input-field col s4 submit-button">
-            <input type="button" value="Add Buyer" className="btn btn-default brown darken-2" onClick={this.postBuyer}/>
-          </div>
-        </div>
+      <div className="col s10">
+        <a className="floating-button btn-floating btn-large waves-effect waves-light brown darken-4"
+           data-toggle="collapse"
+           onClick={this.switchState}>
+            <i className="material-icons">perm_identity</i>
+        </a>
+        { this.state.showBuyerForm ? <AddBuyerForm onUpdate={this.onUpdate} /> : null }
       </div>
+
     );
   }
 });

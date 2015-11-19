@@ -1,0 +1,11 @@
+{
+  "name": "coffee-counter",
+  "devDependencies": {
+    "browserify": "~>6.3",
+    "browserify-incremental": "^1.4.0",
+    "reactify": "^0.17.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
