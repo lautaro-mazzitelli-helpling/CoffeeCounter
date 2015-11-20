@@ -13,13 +13,16 @@
 
 ActiveRecord::Schema.define(version: 20151103154252) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "buyers", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "buyers", ["name"], name: "index_buyers_on_name", unique: true
+  add_index "buyers", ["name"], name: "index_buyers_on_name", unique: true, using: :btree
 
   create_table "coffee_boxes", force: :cascade do |t|
     t.date     "date"
@@ -28,6 +31,7 @@ ActiveRecord::Schema.define(version: 20151103154252) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "coffee_boxes", ["buyer_id"], name: "index_coffee_boxes_on_buyer_id"
+  add_index "coffee_boxes", ["buyer_id"], name: "index_coffee_boxes_on_buyer_id", using: :btree
 
+  add_foreign_key "coffee_boxes", "buyers"
 end
