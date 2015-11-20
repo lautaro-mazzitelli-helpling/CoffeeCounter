@@ -53,8 +53,6 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
-    browserify-rails (0.9.3)
-      sprockets (~> 2.2)
     builder (3.2.2)
     byebug (8.2.0)
     coderay (1.1.0)
@@ -175,7 +173,6 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   bootstrap-sass (~> 3.3.5)
-  browserify-rails (~> 0.5)
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
