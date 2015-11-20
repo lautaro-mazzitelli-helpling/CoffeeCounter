@@ -2,6 +2,7 @@ var AddBuyer = React.createClass({
   componentDidMount() {
     $(document.body).on('keydown', this.handleKeyDown);
     app.stores.BuyerStore.listen(this.onChange);
+    var p = $( "p:last" );
   },
   componentWillUnmount() {
     app.stores.BuyerStore.unlisten(this.onChange);

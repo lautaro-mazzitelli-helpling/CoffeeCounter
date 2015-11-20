@@ -1,19 +1,1 @@
-<section class="sub-header">
-  <div class="image-container">
-  </div>
-</section>
-<section class="buyers-list">
-  <div class="container">
-    <% if notice %>
-      <%= react_component('ShowToast', {type: 'success', message: notice}) %>
-    <% end %>
-
-
-    <%= react_component('ShowToast') %>
-    <%= react_component('AddBuyer') %>
-    <%= react_component('BuyersTable', {buyers: @buyers}) %>
-     
-    <%= react_component('AddCoffeeBoxModal') %>
-  </div>
-</section>
 

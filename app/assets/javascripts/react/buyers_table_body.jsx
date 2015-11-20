@@ -12,7 +12,6 @@ var BuyersTableBody = React.createClass({
     this.setState(state);
   },
   openModal(e){
-    console.log('open', e.currentTarget.dataset.buyer);
     app.actions.BuyerActions.openAddCoffeBoxModal(parseInt(e.currentTarget.dataset.buyer));
   },
   render () {

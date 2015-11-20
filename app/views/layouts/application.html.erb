@@ -8,11 +8,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-
   <%= react_component('Navbar') %>
-  <div class="main">
-    <%= yield %>
-  </div>
+  <%= react_component('CoffeeCounter', {buyers: @buyers}) %>
   <%= react_component('Footer') %>
 </body>
 </html>

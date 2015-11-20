@@ -9,12 +9,11 @@ class BuyerStore {
       submitCoffeeBox: app.actions.BuyerActions.submitCoffeeBox
     });
     this.buyers = [];
-    this.openModal = false;
     this.targetBuyerId = '';
   }
   openAddCoffeBoxModal(buyerId){
     this.targetBuyerId = buyerId;
-    this.openModal = true;
+    $('#modal1').openModal();
   }
   initData (props) {
     this.buyers = props;

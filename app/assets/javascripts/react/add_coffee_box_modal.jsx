@@ -12,11 +12,7 @@ var AddCoffeeBoxModal = React.createClass({
     app.stores.BuyerStore.unlisten(this.onChange);
   },
   onChange(state){
-    if(state.openModal) {
-      console.log('state', state);
-      this.state.targetBuyerId = state.targetBuyerId;
-      $('#modal1').openModal();
-    }
+    this.state.targetBuyerId = state.targetBuyerId;
   },
   sendCoffeBox () {
     app.actions.BuyerActions.submitCoffeeBox(this.state.targetBuyerId);
