@@ -27,6 +27,7 @@ gem 'materialize-sass'
 gem 'momentjs-rails'
 gem 'pg'
 gem 'rails_12factor', group: :production
+gem 'puma'
 
 
 
