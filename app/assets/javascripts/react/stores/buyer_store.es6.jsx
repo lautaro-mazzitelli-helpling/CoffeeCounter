@@ -32,11 +32,17 @@ class BuyerStore {
       },
       success: (res) => {
         this.buyers.push(res.data);
-        app.actions.MessageActions.addMessage({type: "success", message: "User " + res.data.name + " created successfully"});
+        app.actions.MessageActions.addMessage({
+          type: "success",
+          message: "User " + res.data.name + " created successfully"
+        });
         this.emitChange();
       },
       error: (res) => {
-        app.actions.MessageActions.addMessage({type: "error", message: res.responseJSON.name[0]});
+        app.actions.MessageActions.addMessage({
+          type: "error",
+          message: res.responseJSON.name[0]
+        });
       }
     });
   }
@@ -68,12 +74,14 @@ class BuyerStore {
         coffee_box: {
             date: moment().toISOString(),
             buyer_id: buyerId
-
         }
       },
       success: (res) => {
         this.addCoffeeBox(buyerId, res.data);
-        app.actions.MessageActions.addMessage({type: "success", message: "Coffee Box added successfully"});
+        app.actions.MessageActions.addMessage({
+          type: "success",
+          message: "Coffee Box added successfully"
+        });
         this.emitChange();
       }
     });
