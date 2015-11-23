@@ -27,7 +27,7 @@ var AddBuyerForm = React.createClass({
           <input placeholder="Buyer Name" id="form-name" type="text" className="form-control" ref="buyerName" />
         </div>
         <div className="input-field col s4 submit-button">
-          <input type="button" value="Add Buyer" className="btn btn-default brown darken-2" onClick={this.postBuyer}/>
+          <input type="button" value="Add Buyer" className="btn btn-default brown darken-4" onClick={this.postBuyer}/>
         </div>
       </div>
     )

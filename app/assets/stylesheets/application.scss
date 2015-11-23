@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import 'bootstrap-custom';
 @import "materialize/components/color";
-$primary-color: color("brown", "darken-2") !default;
+$primary-color: color("brown", "darken-4") !default;
 @import 'materialize';
 
 .field_with_errors { display: inline-block; }
@@ -74,4 +74,10 @@ nav {
   }
 }
 
-
+.toast {
+  background-color: $primary-color;
+}
+input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid $primary-color;
+  box-shadow: 0 1px 0 0 $primary-color;
+}
