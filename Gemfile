@@ -26,9 +26,11 @@ gem 'react-rails', '~> 1.4.0'
 gem 'materialize-sass'
 gem 'momentjs-rails'
 gem 'pg'
-gem 'rails_12factor', group: :production
 gem 'puma'
 
+group :production do
+  gem 'rails_12factor'
+end
 
 
 group :development, :test do
