@@ -16,4 +16,9 @@
 !/log/.keep
 /tmp
 
-/node_modules
+/node_modules# React on Rails
+npm-debug.log
+node_modules
+
+# Generated js bundles
+/app/assets/javascripts/generated/*
