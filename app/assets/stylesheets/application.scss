@@ -45,16 +45,23 @@ nav {
   height: 60px;
   text-align: center;
   .brand-logo {
+    width: 245px;
+    height: 60px;
     position: relative;
+    background-image: image-url("counter_logo.png");
+    background-repeat:   no-repeat;
+    background-position: center center;
+    left: 0;
+    transform: initial;
   }
 }
 
 .floating-button {
   position: absolute;
-  top: calc(#{$subheaderHeightDesktop} + 23px);
+  top: calc(#{$subheaderHeightDesktop} + 30px);
   right: 60px;
   @media (max-width: $desktop) {
-    top: calc(#{$subheaderHeightMobile} + 23px);
+    top: calc(#{$subheaderHeightMobile} + 30px);
   }
 }
 

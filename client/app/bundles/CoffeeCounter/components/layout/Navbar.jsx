@@ -5,7 +5,8 @@ class Navbar extends React.Component {
     return (
       <nav className="fixed-header">
         <div className="nav-wrapper brown darken-4">
-          <img src="/assets/counter_logo.png" className="brand-logo" />
+        	<div className="brand-logo">
+        	</div>
         </div>
       </nav>
     );
