@@ -10,7 +10,7 @@ export default class AddBuyer extends React.Component {
   constructor (props, context) {
     super(props, context);
     this.state = UIStore.getState();
-    _.bindAll(this, 'onUpdate', 'onUiChange', 'switchState');
+    _.bindAll(this, 'onUiChange', 'switchState');
   }
   
   componentDidMount() {
@@ -39,7 +39,6 @@ export default class AddBuyer extends React.Component {
         </a>
         { this.state.showBuyerForm ? <AddBuyerForm /> : null }
       </div>
-
     );
   }
 }

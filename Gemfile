@@ -93,3 +93,8 @@ group :test  do
   gem "database_cleaner"
   gem "launchy"
 end
+
+# For Heroku deployment
+gem 'rails_12factor', group: :production
+gem 'puma', group: :production
+

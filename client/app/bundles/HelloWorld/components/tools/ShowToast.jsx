@@ -21,7 +21,7 @@ export default class ShowToast extends React.Component {
   onChange(state){
     this.setToast(state.messages[state.messages.length-1]);
   }
-
+  //TODO Move full message logic to MessageStore
   setToast (message) {
     var fullMessage;
     switch (message.type){

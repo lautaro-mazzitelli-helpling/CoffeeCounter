@@ -27,8 +27,5 @@
     "url": "https://github.com/shakacode/react-webpack-rails-tutorial/issues"
   },
   "homepage": "https://github.com/shakacode/react-webpack-rails-tutorial",
-  "dependencies": {},
-  "devDependencies": {
-    "alt": "^0.17.9"
-  }
+  "dependencies": {}
 }
