@@ -6,10 +6,10 @@ module.exports = {
 
   // the project dir
   context: __dirname,
-  entry: ['./app/bundles/CoffeeCounter/startup/globals'],
+  entry: ['./app/startup/globals'],
   output: {
     filename: 'server-bundle.js',
-    path: './app/bundles/CoffeeCounter/CoffeeCounter/assets/javascripts/generated',
+    path: './app/assets/javascripts/generated',
   },
   resolve: {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', 'config.js'],
