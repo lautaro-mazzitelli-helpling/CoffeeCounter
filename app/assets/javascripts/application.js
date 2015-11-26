@@ -1,3 +1,23 @@
+// DO NOT REQUIRE jQuery or jQuery-ujs in this file!
+// DO NOT REQUIRE TREE!
+
+// CRITICAL that generated/vendor-bundle must be BEFORE bootstrap-sprockets and turbolinks
+// since it is exposing jQuery and jQuery-ujs
+//= require react_on_rails
+
+//= require generated/vendor-bundle
+//= require generated/app-bundle
+
+// bootstrap-sprockets depends on generated/vendor-bundle for jQuery.
+//= require bootstrap-sprockets
+// DO NOT REQUIRE jQuery or jQuery-ujs in this file!
+// DO NOT REQUIRE TREE!
+
+// CRITICAL that generated/vendor-bundle must be BEFORE bootstrap-sprockets and turbolinks
+// since it is exposing jQuery and jQuery-ujs
+
+// bootstrap-sprockets depends on generated/vendor-bundle for jQuery.
+//= require bootstrap-sprockets
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -10,13 +30,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require bootstrap-sprockets
-//= require jquery_ujs
+//= require generated/vendor-bundle
+//= require generated/app-bundle
+
 //= require turbolinks
-//= require react
-//= require react_ujs
-//= require components
-//= require_tree .
-//= require materialize-sprockets
-//= require moment
+//= require bootstrap-sprockets
+
+//= require react_on_rails

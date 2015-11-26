@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import 'bootstrap-custom';
 @import "materialize/components/color";
-$primary-color: color("brown", "darken-2") !default;
+$primary-color: color("brown", "darken-4") !default;
 @import 'materialize';
 
 .field_with_errors { display: inline-block; }
@@ -74,4 +74,31 @@ nav {
   }
 }
 
+.toast {
+  background-color: $primary-color;
+}
+input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid $primary-color;
+  box-shadow: 0 1px 0 0 $primary-color;
+}
+// DO NOT REQUIRE TREE! It will interfere with load order!
+
+// Account for differences between Rails and Webpack Sass code.
+$rails: true;
+
+// Included from bootstrap-sprockets gem and loaded in app/assets/javascripts/application.rb
+@import 'bootstrap-sprockets';
+
+// Customizations - needs to be imported after bootstrap-sprocket but before bootstrap-custom!
+// The _pre-bootstrap.scss file is located under
+// client/assets/stylesheets, which has been added to the Rails asset
+// pipeline search path. See config/application.rb.
+@import 'pre-bootstrap';
+
+// These scss files are located under client/assets/stylesheets
+// (which has been added to the Rails asset pipeline search path in config/application.rb).
+@import 'bootstrap-custom';
+
+// This must come after all the boostrap styles are loaded so that these styles can override those.
+@import 'post-bootstrap';
 
