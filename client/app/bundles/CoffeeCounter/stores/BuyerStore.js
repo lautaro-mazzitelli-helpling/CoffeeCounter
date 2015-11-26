@@ -24,7 +24,7 @@ class BuyerStore {
   submitBuyer (name) {
     $.ajax({
       type: "POST",
-      url: 'http://localhost:3000/buyers.json',
+      url: '/buyers.json',
       data: {
         buyer: {
             name: name
@@ -68,7 +68,7 @@ class BuyerStore {
   submitCoffeeBox (buyerId) {
     $.ajax({
       type: "POST",
-      url: 'http://localhost:3000/coffee_boxes.json',
+      url: '/coffee_boxes.json',
       data: {
         coffee_box: {
             date: moment().toISOString(),
