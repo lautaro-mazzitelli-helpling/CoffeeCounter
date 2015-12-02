@@ -2,6 +2,7 @@ import React from 'react';
 
 import BuyersTableHead from './BuyersTableHead';
 import BuyersTableBody from './BuyersTableBody';
+import ConfirmationModal from "../layout/ConfirmationModal";
 
 class BuyersTable extends React.Component {
 
@@ -12,6 +13,7 @@ class BuyersTable extends React.Component {
           <BuyersTableHead />
           <BuyersTableBody />
         </table>
+        <ConfirmationModal message="Are you sure you bought it?" />
       </div>
     )
   }

@@ -10,6 +10,15 @@ class UIActions {
   switchNewBuyerForm() {
     this.dispatch();
   }
+  openConfirmationModal() {
+    this.dispatch();
+  }
+  acceptConfirmationModal() {
+    this.dispatch();
+  }
+  cancelConfirmationModal() {
+    this.dispatch();
+  }
 }
 
 export default alt.createActions(UIActions);

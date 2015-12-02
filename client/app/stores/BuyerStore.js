@@ -22,6 +22,7 @@ class BuyerStore {
     this.buyers = buyers;
   }
   submitBuyer (name) {
+    console.log('this');
     $.ajax({
       type: "POST",
       url: '/buyers.json',
